@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -12,9 +13,13 @@ namespace FilterLists.Services.WebFileClient
 
         public async Task DownloadAsTxtAsync(Uri uri, string fileName)
         {
-            var message = await _httpClient.GetAsync(uri);
-            if (message.IsSuccessStatusCode)
+            using (var response = await _httpClient.GetAsync(uri, HttpCompletionOption.ResponseHeadersRead))
+            using (var streamToReadFrom = await response.Content.ReadAsStreamAsync())
             {
+                using (Stream streamToWriteTo = File.Open(fileName, FileMode.Create))
+                {
+                    await streamToReadFrom.CopyToAsync(streamToWriteTo);
+                }
             }
         }
     }

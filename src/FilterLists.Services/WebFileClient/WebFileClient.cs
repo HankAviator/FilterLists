@@ -13,14 +13,15 @@ namespace FilterLists.Services.WebFileClient
 
         public async Task DownloadAsTxtAsync(Uri uri, string fileName)
         {
-            using (var response = await _httpClient.GetAsync(uri, HttpCompletionOption.ResponseHeadersRead))
-            using (var streamToReadFrom = await response.Content.ReadAsStreamAsync())
-            {
-                using (Stream streamToWriteTo = File.Open(fileName, FileMode.Create))
+            if (uri.IsFile && Path.GetExtension(uri.AbsoluteUri) == ".txt")
+                using (var response = await _httpClient.GetAsync(uri, HttpCompletionOption.ResponseHeadersRead))
+                using (var streamToReadFrom = await response.Content.ReadAsStreamAsync())
                 {
-                    await streamToReadFrom.CopyToAsync(streamToWriteTo);
+                    using (Stream streamToWriteTo = File.Open(fileName, FileMode.Create))
+                    {
+                        await streamToReadFrom.CopyToAsync(streamToWriteTo);
+                    }
                 }
-            }
         }
     }
 }

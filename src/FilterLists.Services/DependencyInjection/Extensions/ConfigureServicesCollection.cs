@@ -25,7 +25,7 @@ namespace FilterLists.Services.DependencyInjection.Extensions
             services.AddEntityFrameworkMySql()
                     .AddDbContextPool<FilterListsDbContext>(o =>
                         o.UseMySql(config.GetConnectionString("FilterListsConnection"),
-                            m => m.MigrationsAssembly("FilterLists.Api")));
+                            m => m.MigrationsAssembly("FilterLists.Data")));
             services.TryAddScoped<FilterListService>();
             services.TryAddScoped<LanguageService>();
             services.TryAddScoped<LicenseService>();
@@ -44,7 +44,7 @@ namespace FilterLists.Services.DependencyInjection.Extensions
             services.AddEntityFrameworkMySql()
                     .AddDbContextPool<FilterListsDbContext>(o =>
                         o.UseMySql(config.GetConnectionString("FilterListsConnection"),
-                            m => m.MigrationsAssembly("FilterLists.Api")));
+                            m => m.MigrationsAssembly("FilterLists.Data")));
             services.TryAddScoped<GitHubService>();
             services.TryAddScoped<SnapshotService>();
             services.TryAddScoped<Logger>();

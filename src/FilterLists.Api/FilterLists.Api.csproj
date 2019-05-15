@@ -31,7 +31,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\Extensions\" />
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

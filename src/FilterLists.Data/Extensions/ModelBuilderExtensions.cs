@@ -25,6 +25,11 @@ namespace FilterLists.Data.Extensions
             }
             catch (FileNotFoundException e)
             {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            catch (JsonReaderException e)
+            {
                 Console.WriteLine($"Syntax error in {typeof(TEntity).Name}.json");
                 Console.WriteLine(e.Message);
                 return null;

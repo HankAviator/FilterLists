@@ -8,7 +8,7 @@ using Newtonsoft.Json.Serialization;
 namespace FilterLists.Api
 {
     // REF: https://stackoverflow.com/a/18486790/2343739
-    public class SkipEmptyContractResolver : DefaultContractResolver
+    internal class SkipEmptyContractResolver : DefaultContractResolver
     {
         protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
         {

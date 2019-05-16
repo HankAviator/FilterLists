@@ -1,6 +1,4 @@
 ﻿using Microsoft.ApplicationInsights.Extensibility.Implementation;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
@@ -11,7 +9,6 @@ namespace FilterLists.Api.DependencyInjection.Extensions
     {
         public static void AddFilterListsApi(this IServiceCollection services)
         {
-            services.ConfigureCookiePolicy();
             services.AddMemoryCache();
             services.AddResponseCaching();
             services.AddMvcCustom();
@@ -19,13 +16,6 @@ namespace FilterLists.Api.DependencyInjection.Extensions
             services.AddApiVersioning();
             TelemetryDebugWriter.IsTracingDisabled = true;
         }
-
-        private static void ConfigureCookiePolicy(this IServiceCollection services) =>
-            services.Configure<CookiePolicyOptions>(opts =>
-            {
-                opts.CheckConsentNeeded = context => true;
-                opts.MinimumSameSitePolicy = SameSiteMode.None;
-            });
 
         private static void AddMvcCustom(this IServiceCollection services) =>
             services.AddMvc()

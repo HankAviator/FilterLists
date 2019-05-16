@@ -30,17 +30,8 @@ RUN dotnet build -c Release --no-restore
 
 # init Data.Tests
 FROM build AS test-data
-ENTRYPOINT ["dotnet", "test"]
-
-# restore Data.Tests
-WORKDIR /app/tests/FilterLists.Data.Tests
-COPY tests/FilterLists.Data.Tests/FilterLists.Data.Tests.csproj .
-RUN dotnet restore
-
-# build Data.Tests
-COPY tests/FilterLists.Data.Tests/. .
-RUN dotnet build -c Release --no-restore
-COPY data/. data/
+WORKDIR /app/src/FilterLists.Data
+ENTRYPOINT ["dotnet", "ef", "migrations", "--startup-project", "../FilterLists.Api", "add"]
 
 # init Services.Tests
 FROM build AS test-services

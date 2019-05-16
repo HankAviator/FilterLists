@@ -4,9 +4,9 @@ using FilterLists.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
-namespace FilterLists.Data.Extensions
+namespace FilterLists.Data
 {
-    public static class ModelBuilderExtensions
+    public static class ModelBuilderExtension
     {
         private const string DataPath = "data";
 
@@ -25,6 +25,7 @@ namespace FilterLists.Data.Extensions
             }
             catch (FileNotFoundException e)
             {
+                Console.WriteLine($"Cannot find file {typeof(TEntity).Name}.json");
                 Console.WriteLine(e.Message);
                 return null;
             }

@@ -2,7 +2,6 @@
 using FilterLists.Data.Entities.Junctions;
 using FilterLists.Data.EntityTypeConfigurations;
 using FilterLists.Data.EntityTypeConfigurations.Junctions;
-using FilterLists.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilterLists.Data

@@ -30,8 +30,8 @@ RUN dotnet build -c Release --no-restore
 
 # init Data.Tests
 FROM build AS test-data
-WORKDIR /app/src/FilterLists.Data
 COPY data/. data/
+WORKDIR /app/src/FilterLists.Data
 ENTRYPOINT ["dotnet", "ef", "migrations", "--startup-project", "../FilterLists.Api", "add"]
 
 # init Services.Tests
@@ -54,4 +54,3 @@ RUN dotnet publish -c Release -o out --no-restore --no-build
 # final
 FROM base as final
 COPY --from=publish /app/src/FilterLists.Api/out .
-COPY data/. data/

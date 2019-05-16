@@ -8,7 +8,7 @@ namespace FilterLists.Data.Extensions
 {
     public static class ModelBuilderExtensions
     {
-        private const string DataPath = "..\\..\\data";
+        private const string DataPath = "data";
 
         public static void Seed<TEntity>(this ModelBuilder modelBuilder) where TEntity : class, IBaseEntity
         {

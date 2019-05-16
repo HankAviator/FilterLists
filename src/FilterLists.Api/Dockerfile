@@ -31,6 +31,7 @@ RUN dotnet build -c Release --no-restore
 # init Data.Tests
 FROM build AS test-data
 WORKDIR /app/src/FilterLists.Data
+COPY data/. data/
 ENTRYPOINT ["dotnet", "ef", "migrations", "--startup-project", "../FilterLists.Api", "add"]
 
 # init Services.Tests

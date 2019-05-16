@@ -11,6 +11,8 @@ services:
       - test-data
     depends_on:
       - mariadb
+    environment:
+      ConnectionStrings__FilterListsConnection: "Server=mariadb;Database=filterlists;Uid=filterlists;Pwd=filterlists;"
 
   mariadb:
     image: mariadb:10

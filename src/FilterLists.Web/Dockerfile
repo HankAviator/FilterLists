@@ -2,10 +2,9 @@
 # Command: docker build -f src/FilterLists.Web/Dockerfile .
 
 # init base
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine as runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine as base
 WORKDIR /app
-ENV ASPNETCORE_URLS "http://*:5000"
-EXPOSE 5000
+EXPOSE 80
 ENTRYPOINT ["dotnet", "FilterLists.Web.dll"]
 
 # init build
@@ -25,6 +24,6 @@ WORKDIR /app/src/FilterLists.Web/
 COPY src/FilterLists.Web/. ./
 RUN dotnet publish -c Release -o out --no-restore
 
-# run
-FROM runtime as final
+# final
+FROM base as final
 COPY --from=build /app/src/FilterLists.Web/out ./

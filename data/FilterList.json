@@ -197,7 +197,7 @@
     "licenseId": 10,
     "name": "Dandelion Sprout's Nordic Filters for Tidier Websites",
     "publishedDate": "2018-05-15T02:39:19",
-    "syntaxId": 3,
+    "syntaxId": 17,
     "updatedDate": "2019-04-08T01:41:02",
     "viewUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianList.txt",
     "viewUrlMirror1": "https://repo.or.cz/FilterMirrorRepo.git/blob_plain/refs/heads/master:/NorwegianList.txt",
@@ -13597,7 +13597,8 @@
     "syntaxId": 1,
     "updatedDate": "2019-04-10T23:39:25",
     "viewUrl": "https://gitlab.com/intr0/iVOID.GitLab.io/raw/master/iVOID.hosts",
-    "viewUrlMirror1": "https://notabug.org/-intr0/iVOID/raw/master/iVOID.hosts"
+    "viewUrlMirror1": "https://notabug.org/-intr0/iVOID/raw/master/iVOID.hosts",
+    "viewUrlMirror2": "http://vivmyccb3jdb7yij.onion/intr0/iVOID.GitLab.io/raw/master/iVOID.hosts"
   },
   {
     "id": 1296,
@@ -13612,7 +13613,7 @@
     "updatedDate": "2019-04-10T23:58:11",
     "viewUrl": "https://gitlab.com/intr0/DomainVoider/raw/master/DomainVoider.txt",
     "viewUrlMirror1": "https://notabug.org/-intr0/DomainVoider/raw/master/DomainVoider.txt",
-    "viewUrlMirror2": "https://vivmyccb3jdb7yij.onion/intr0/DomainVoider/raw/master/DomainVoider.txt"
+    "viewUrlMirror2": "http://vivmyccb3jdb7yij.onion/intr0/DomainVoider/raw/master/DomainVoider.txt"
   },
   {
     "id": 1297,
@@ -16967,5 +16968,63 @@
     "name": "Little Snitch Block Facebook Rule Set",
     "syntaxId": 18,
     "viewUrl": "https://raw.githubusercontent.com/fabianmoronzirfas/block-facebook/master/block-facebook.lsrules"
+  },
+  {
+    "id": 1579,
+    "description": "Originally made as a proof-of-concept to see how few entries that a modern-day adblocker would need to block ads, this list aims for at least 90% of EasyList's coverage with less than 0.1% as many entries.",
+    "donateUrl": "https://sproutsluckycorner.wordpress.com/2017/11/14/my-work-and-contact-resume/#donations",
+    "emailAddress": "imreeil42@gmail.com",
+    "homeUrl": "https://github.com/DandelionSprout/adfilt",
+    "issuesUrl": "https://github.com/DandelionSprout/adfilt/issues",
+    "licenseId": 10,
+    "name": "Extremely Condensed Adblocking List",
+    "syntaxId": 3,
+    "publishedDate": "2019-05-15T00:00:00",
+    "updatedDate": "2019-05-17T00:00:00",
+    "viewUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ExtremelyCondensedList.txt",
+    "viewUrlMirror1": "https://repo.or.cz/FilterMirrorRepo.git/blob_plain/refs/heads/master:/ExtremelyCondensedList.txt",
+    "viewUrlMirror2": "https://gitlab.com/DandelionSprout/adfilt/raw/master/ExtremelyCondensedList.txt"
+  },
+  {
+    "id": 1580,
+    "description": "This is an unofficial adaption to Nano Adblocker only, of certain entries that are otherwise not present in the official adblocker version of I Don't Care About Cookies, but which are part of the extension version's 'common6.js' file.",
+    "homeUrl": "https://github.com/DandelionSprout/adfilt",
+    "issuesUrl": "https://github.com/DandelionSprout/adfilt/issues",
+    "licenseId": 4,
+    "name": "I Don't Care about Cookies Nano expansion",
+    "syntaxId": 12,
+    "viewUrl": "https://raw.githubusercontent.com/NanoAdblocker/NanoFilters/master/ThirdPartyPrivileged/IDCACnano.txt"
+  },
+  {
+    "id": 1581,
+    "description": "Removes ads, affiliation ads, and empty boxes on Norwegian, Danish, Icelandic, Sami and Danish territorial sites to produce a cleaner browser experience. Meant to be used on top of general filters. uBO users should use the regular version instead.",
+    "donateUrl": "https://sproutsluckycorner.wordpress.com/2017/11/14/my-work-and-contact-resume/#donations",
+    "emailAddress": "imreeil42@gmail.com",
+    "homeUrl": "https://github.com/DandelionSprout/adfilt",
+    "issuesUrl": "https://github.com/DandelionSprout/adfilt/issues",
+    "licenseId": 10,
+    "name": "Dandelion Sprout's Nordic Filters for Tidier Websites (for AdGuard)",
+    "publishedDate": "2019-05-17T00:00:00",
+    "syntaxId": 6,
+    "updatedDate": "2019-05-17T00:00:00",
+    "viewUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
+    "viewUrlMirror1": "https://repo.or.cz/FilterMirrorRepo.git/blob_plain/refs/heads/master:/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt",
+    "viewUrlMirror2": "https://gitlab.com/DandelionSprout/adfilt/raw/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersAdGuard.txt"
+  },
+  {
+    "id": 1582,
+    "description": "Removes ads, affiliation ads, and empty boxes on Norwegian, Danish, Icelandic, Sami and Danish territorial sites to produce a cleaner browser experience. Meant to be used on top of general filters. uBO and AdGuard users should use the other versions instead.",
+    "donateUrl": "https://sproutsluckycorner.wordpress.com/2017/11/14/my-work-and-contact-resume/#donations",
+    "emailAddress": "imreeil42@gmail.com",
+    "homeUrl": "https://github.com/DandelionSprout/adfilt",
+    "issuesUrl": "https://github.com/DandelionSprout/adfilt/issues",
+    "licenseId": 10,
+    "name": "Dandelion Sprout's Nordic Filters for Tidier Websites (for AdBlock and Adblock Plus)",
+    "publishedDate": "2019-05-17T00:00:00",
+    "syntaxId": 3,
+    "updatedDate": "2019-05-17T00:00:00",
+    "viewUrl": "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersABP.txt",
+    "viewUrlMirror1": "https://repo.or.cz/FilterMirrorRepo.git/blob_plain/refs/heads/master:/NorwegianExperimentalList%20alternate%20versions/NordicFiltersABP.txt",
+    "viewUrlMirror2": "https://gitlab.com/DandelionSprout/adfilt/raw/master/NorwegianExperimentalList%20alternate%20versions/NordicFiltersABP.txt"
   }
 ]

@@ -26,6 +26,12 @@ WORKDIR /app/src/FilterLists.Api
 COPY src/FilterLists.Api/. .
 RUN dotnet build -c Release --no-restore
 
+# init data migration test
+FROM build AS test-data
+COPY data/. data/
+WORKDIR /app/src/FilterLists.Data
+ENTRYPOINT ["dotnet", "ef", "migrations", "--startup-project", "../FilterLists.Api", "add"]
+
 # init Services.Tests
 FROM build AS test-services
 ENTRYPOINT ["dotnet", "test"]
@@ -38,12 +44,6 @@ RUN dotnet restore
 # build Services.Tests
 COPY tests/FilterLists.Services.Tests/. .
 RUN dotnet build -c Release --no-restore
-
-# init data migration test
-FROM build AS test-data
-COPY data/. data/
-WORKDIR /app/src/FilterLists.Data
-ENTRYPOINT ["dotnet", "ef", "migrations", "--startup-project", "../FilterLists.Api", "add"]
 
 # publish
 FROM test-data AS publish

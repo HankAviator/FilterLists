@@ -2,11 +2,11 @@ version: "3.7"
 
 services:
   api:
-    image: filterlists.api:test-data
+    container_name: migrate-data
     build:
       context: .
       dockerfile: src/FilterLists.Api/Dockerfile
-      target: test-data
+      target: migrate-data
     networks:
       - test-data
     depends_on:
